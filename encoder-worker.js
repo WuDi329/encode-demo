@@ -12,6 +12,8 @@ onmessage = async function (e) {
     switch (msg.type) {
         case 'start':
             try {
+                console.log("encoder-worker msg.config.framerate")
+                console.log(msg)
                 const Encoder = msg.audio ? AudioEncoder : VideoEncoder;
                 const type = msg.audio ? 'audio-data' : 'video-data';
 
